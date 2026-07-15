@@ -1,7 +1,7 @@
 {
   "name": "senior-engineer-toolkit",
-  "description": "Full software-engineering-lifecycle skill pack: idea to spec, implementation planning, architecture decision records, adversarial design review, unit test strategy, root-cause debugging, technical documentation, and deployment readiness.",
-  "version": "1.0.0",
+  "description": "Full software-engineering-lifecycle skill pack: idea to spec, implementation planning, architecture decision records, adversarial design review, unit test strategy, root-cause debugging, technical documentation, deployment readiness, Figma-to-prototype code generation, and feature traceability across branches and releases.",
+  "version": "1.1.0",
   "author": {
     "name": "rajenderreddykallem"
   },
@@ -14,6 +14,9 @@
     "debugging",
     "documentation",
     "deployment",
-    "sdlc"
+    "sdlc",
+    "figma",
+    "design-to-code",
+    "traceability"
   ]
 }

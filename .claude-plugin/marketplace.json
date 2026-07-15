@@ -3,13 +3,13 @@
   "owner": {
     "name": "rajenderreddykallem"
   },
-  "description": "A curated set of Claude skills covering the full software engineering lifecycle: idea to spec, architecture decisions, adversarial design review, implementation planning, unit testing strategy, root-cause debugging, documentation, and deployment readiness.",
+  "description": "A curated set of Claude skills covering the full software engineering lifecycle: idea to spec, architecture decisions, adversarial design review, implementation planning, unit testing strategy, root-cause debugging, documentation, deployment readiness, Figma-to-prototype code generation, and feature traceability across branches and releases.",
   "plugins": [
     {
       "name": "senior-engineer-toolkit",
       "source": "./",
-      "description": "Full software-engineering-lifecycle skill pack: idea to spec, implementation planning, architecture decision records, adversarial design review, unit test strategy, root-cause debugging, technical documentation, and deployment readiness.",
-      "version": "1.0.0",
+      "description": "Full software-engineering-lifecycle skill pack: idea to spec, implementation planning, architecture decision records, adversarial design review, unit test strategy, root-cause debugging, technical documentation, deployment readiness, Figma-to-prototype code generation, and feature traceability across branches and releases.",
+      "version": "1.1.0",
       "author": {
         "name": "rajenderreddykallem"
       },
