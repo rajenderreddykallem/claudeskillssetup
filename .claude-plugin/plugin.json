@@ -1,0 +1,19 @@
+{
+  "name": "senior-engineer-toolkit",
+  "description": "Full software-engineering-lifecycle skill pack: idea to spec, implementation planning, architecture decision records, adversarial design review, unit test strategy, root-cause debugging, technical documentation, and deployment readiness.",
+  "version": "1.0.0",
+  "author": {
+    "name": "rajenderreddykallem"
+  },
+  "license": "MIT",
+  "keywords": [
+    "engineering",
+    "architecture",
+    "code-review",
+    "testing",
+    "debugging",
+    "documentation",
+    "deployment",
+    "sdlc"
+  ]
+}
