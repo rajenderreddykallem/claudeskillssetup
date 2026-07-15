@@ -8,18 +8,20 @@ stage, not just autocomplete code.
 Clone this repo once, install the pack, and it works the same way in any Claude Code session —
 on any machine, in any project — without re-copying files by hand.
 
-## The 8 skills
+## The 10 skills
 
 | Skill | Lifecycle stage | Use it when you... |
 |---|---|---|
 | [`idea-to-spec`](skills/idea-to-spec/SKILL.md) | Idea → spec | Have a rough idea or vague ticket and need a real spec before designing anything |
 | [`architecture-decision`](skills/architecture-decision/SKILL.md) | Architecture | Face a consequential technical choice and need alternatives + tradeoffs on record |
 | [`design-grill`](skills/design-grill/SKILL.md) | Critical review | Want a design/spec/PR adversarially pressure-tested before you commit to it |
+| [`figma-to-prototype`](skills/figma-to-prototype/SKILL.md) | Design → code | Have a Figma frame/link and need working prototype code that fits your codebase |
 | [`implementation-plan`](skills/implementation-plan/SKILL.md) | Implementation | Have an approved design and need it sequenced into safe, ordered build steps |
 | [`test-strategy`](skills/test-strategy/SKILL.md) | Unit testing | Need to decide what to test, what to skip, and write tests that survive refactors |
 | [`root-cause`](skills/root-cause/SKILL.md) | Fixing problems | Have a bug, failing test, or incident and want a systematic fix, not a guess |
 | [`write-docs`](skills/write-docs/SKILL.md) | Documenting | Need a README, runbook, API doc, or PR description written for the next reader |
 | [`deploy-check`](skills/deploy-check/SKILL.md) | Deployable solutions | Are about to ship and need a rollout plan and an explicit go/no-go |
+| [`feature-traceability`](skills/feature-traceability/SKILL.md) | Traceability & audit | Need to trace a feature/fix across branches, releases, and time, and find gaps |
 
 Each skill is a self-contained `SKILL.md` — a text file with a `description` (so Claude knows
 when to load it automatically) and instructions (what Claude does once loaded). Claude invokes
@@ -31,7 +33,7 @@ setup already allows — these are pure prompt/instruction files, safe to read b
 
 ### Option A — Claude Code: one-command install (recommended)
 
-Works in the terminal, IDE extensions, or Claude Code on the web. Installs all 8 skills as a single plugin, namespaced so it never collides with anything else in your setup.
+Works in the terminal, IDE extensions, or Claude Code on the web. Installs all 10 skills as a single plugin, namespaced so it never collides with anything else in your setup.
 
 ```
 /plugin marketplace add rajenderreddykallem/claudeskillssetup
@@ -116,14 +118,31 @@ into a second file in the same folder and link to it from `SKILL.md`.
 ```
 .claude-plugin/
   marketplace.json     # lets `/plugin marketplace add` find this repo
-  plugin.json           # plugin manifest bundling all 8 skills
+  plugin.json           # plugin manifest bundling all 10 skills
 skills/
   idea-to-spec/SKILL.md
   architecture-decision/SKILL.md
   design-grill/SKILL.md
+  figma-to-prototype/SKILL.md
   implementation-plan/SKILL.md
   test-strategy/SKILL.md
   root-cause/SKILL.md
   write-docs/SKILL.md
   deploy-check/SKILL.md
+  feature-traceability/SKILL.md
 ```
+
+## A note on the two newest skills
+
+- **`figma-to-prototype`** gets real design data either through a Figma MCP connection (e.g.
+  Anthropic's official `figma@claude-plugins-official` plugin) or exported files you provide —
+  it won't fabricate a design from a bare share-link URL. Install the Figma plugin separately if
+  you want the live-connection path:
+  ```
+  /plugin marketplace add anthropics/claude-plugins-official
+  /plugin install figma@claude-plugins-official
+  ```
+- **`feature-traceability`** works purely off local git history (branches, tags, commit search) —
+  no external tracker integration required. It pre-approves read-only `git log`/`branch`/`tag`/
+  `show`/`diff`/`grep` commands via `allowed-tools` so it doesn't stop for permission on every
+  inspection command; it never runs anything that mutates the repo.
